@@ -74,7 +74,7 @@
 
     <owl:NamedIndividual rdf:about="&untitled-ontology-12;im1">
         <rdf:type rdf:resource="&untitled-ontology-12;Image"/>
-        <hasFileName rdf:datatype="&xsd;string">ptero.obj</hasFileName>
+        <hasFileName rdf:datatype="&xsd;string">https://github.com/mario-gianni/web-client-stardog-ros-jsc3d/blob/master/models/images/floorplan1.jpg</hasFileName>
     </owl:NamedIndividual>
     
 
@@ -83,7 +83,7 @@
 
     <owl:NamedIndividual rdf:about="&untitled-ontology-12;im2">
         <rdf:type rdf:resource="&untitled-ontology-12;Image"/>
-        <hasFileName rdf:datatype="&xsd;string">tirarex.obj</hasFileName>
+        <hasFileName rdf:datatype="&xsd;string">https://github.com/mario-gianni/web-client-stardog-ros-jsc3d/blob/master/models/images/floorplan2.jpg</hasFileName>
     </owl:NamedIndividual>
     
 
@@ -92,7 +92,7 @@
 
     <owl:NamedIndividual rdf:about="&untitled-ontology-12;im3">
         <rdf:type rdf:resource="&untitled-ontology-12;Image"/>
-        <hasFileName rdf:datatype="&xsd;string">parasau.obj</hasFileName>
+        <hasFileName rdf:datatype="&xsd;string">https://github.com/mario-gianni/web-client-stardog-ros-jsc3d/blob/master/models/images/floorplan3.jpg</hasFileName>
     </owl:NamedIndividual>
 </rdf:RDF>
 
