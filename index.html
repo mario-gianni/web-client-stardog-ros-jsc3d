@@ -1,0 +1,100 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>TRADR T-Jex 2015</title>
+	</head>
+
+	<body onLoad="init()">
+    	<div style="width:1024px; margin:auto; position:absolute; font-size: 9pt; color: #777777;">
+        	<canvas id="cv" style="border: 1px solid;" width="560" height="420" ></canvas>
+            <div>
+            <button id="load" onClick="getConnection();">Stardog</button>
+            <select id="model_list">
+			<option>ptero.obj</option>
+			<option>tirarex.obj</option>
+			<option>parasau.obj</option>
+			</select>
+			<button id="load" onclick="loadModel();">Load</button>
+            <h2>Query Results</h2>
+        	<textarea id="results" rows="25" cols="70"></textarea>
+        	</div>
+        </div>
+        
+        <script src="../jsc3d/jsc3d.js" type="text/javascript"></script>
+        <script src="../jsc3d/jsc3d.touch.js" type="text/javascript"></script>
+        <script src="../stardog.js-ad6108b/bower_components/jquery/dist/jquery.js" type="text/javascript"></script>
+        <script src="../stardog.js-ad6108b/bower_components/expect/index.js" type="text/javascript"></script>
+        <script src="../stardog.js-ad6108b/bower_components/lodash/dist/lodash.js" type="text/javascript"></script>
+    	<script src="../stardog.js-ad6108b/js/stardog.js" type="text/javascript"></script>
+        
+		<script type="text/javascript">
+			var canvas;
+			var viewer;
+			var path = "/Users/mario/Work/Projects/TRADR/jsc3d/demos/models/";
+
+			function init() {
+				canvas = document.getElementById('cv');
+				viewer = new JSC3D.Viewer(canvas);
+				viewer.setParameter('SceneUrl', path + 'ptero.obj');
+				viewer.setParameter('InitRotationX', 0);
+				viewer.setParameter('InitRotationY', -30);
+				viewer.setParameter('InitRotationZ', 0);
+				viewer.setParameter('ModelColor', '#FFFFFF');
+				viewer.setParameter('BackgroundColor1', '#AFAFAF');
+				viewer.setParameter('BackgroundColor2', '#000000');
+				viewer.setParameter('RenderMode', 'texturesmooth');
+				viewer.setParameter('MipMapping', 'on');
+				viewer.init();
+				viewer.update();
+			}
+		
+			function getConnection()
+			{
+				var conn = new Stardog.Connection();
+				conn.setEndpoint("http://localhost:5820/");
+            	conn.setCredentials("admin", "admin");
+				conn.query({
+        				database: "dbExample",
+        				query: "select ?filename where {?image a :Image . ?image :hasFileName ?filename}",  
+        				limit: 10,
+        				offset: 0
+    					},
+    			function (data) {
+						
+        				expect(data).not.to.be(null);
+                    	expect(data.results).not.to.be(undefined);
+                    	expect(data.results.bindings).not.to.be(undefined);
+                    	expect(data.results.bindings.length).to.be.above(0);
+                    	expect(data.results.bindings.length).to.be(3);
+						console.log(data.results.bindings);
+						<!---->document.getElementById("results").innerHTML = data.results.bindings;
+						<!---->alert(data.results.bindings);
+						var bindings = data.results.bindings;
+					
+						// JavaScript  for...in loop iterates
+						// through the properties of bindings array
+						// which are [0,1,length-1] as opposed to the
+						// array item.
+					
+						for(i in bindings) {
+					  			var binding = bindings[i];
+								for(n in binding) {
+									<!---->alert(binding[n].value); // a nested for-loop to print binding values
+									$(document.getElementById("results")).append(binding[n].value,"\n");
+									<!---->$("results").append(binding[n].value);
+								 }
+					  			<!---->alert(binding); // a for-loop to print all the bindings
+						}
+						});
+				}	
+
+			
+			function loadModel() {
+						var models = document.getElementById('model_list');
+						viewer.replaceSceneFromUrl(path + models[models.selectedIndex].innerHTML);
+						viewer.update();
+						}	
+		</script>
+	</body>
+</html>
