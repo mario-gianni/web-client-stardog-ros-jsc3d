@@ -12,137 +12,121 @@
 	<script src="http://code.jquery.com/ui/1.9.1/jquery-ui.js"></script>
     <script src="script/vertical-tabs.js" type="text/javascript"></script>
 	<script src="js/jsc3d.js" type="text/javascript"></script>
-        <script src="js/jsc3d.touch.js" type="text/javascript"></script>
-        <script src="js/jquery.js" type="text/javascript"></script>
-        <script src="js/index.js" type="text/javascript"></script>
-        <script src="js/lodash.js" type="text/javascript"></script>
-    	<script src="js/stardog.js" type="text/javascript"></script>
+    <script src="js/jsc3d.touch.js" type="text/javascript"></script>
+    <script src="js/jquery.js" type="text/javascript"></script>
+    <script src="js/index.js" type="text/javascript"></script>
+    <script src="js/lodash.js" type="text/javascript"></script>
+   	<script src="js/stardog.js" type="text/javascript"></script>
 
 
 	<section id="wrapper" class="wrapper">
 
-  		<div id="v-nav">
-
-  <ul>
-    <li tab="tab1" id="tab1" class="first current">Disaster Site</li>
-    <li tab="tab2">Levels</li>
-    <li tab="tab3" class="last">Area of Interest</li>
-   
- </ul>
-
- <div class="tab-content">
-   <div style="width:1024px; margin:auto; position:absolute; font-size: 9pt; color: #777777;">
-   	<canvas id="cv1" style="border: 1px solid;" width="1024" height="768" ></canvas>
-    <div align="center">
-    <button id="previous1">Previous</button>
-    <button id="next1">Next</button>
-    </div>
-   </div>
- </div>
-
- <div class="tab-content">
-      <div style="width:1024px; margin:auto; position:absolute; font-size: 9pt; color: #777777;">
-        	<canvas id="cv2" style="border: 1px solid;" width="1024" height="768" ></canvas>
-            <div align="center">
-    		<button id="previous2">Previous</button>
-    		<button id="next2">Next</button>
-    		</div>
+        <div id="v-nav">
+    
+            <ul>
+                <li tab="tab1" id="tab1" class="first current">Disaster Site</li>
+                <li tab="tab2">Levels</li>
+                <li tab="tab3" class="last">Area of Interest</li>
+       
+            </ul>
+    
+            <div class="tab-content">
+                <div style="width:1024px; margin:auto; position:absolute; font-size: 9pt; color: #777777;">
+                <canvas id="cv1" style="border: 1px solid;" width="1024" height="768" ></canvas>
+                    <div align="center">
+                        <button id="previous1">Previous</button>
+                        <button id="next1">Next</button>
+                    </div>
+                </div>
+             </div>
+    
+            <div class="tab-content">
+                <div style="width:1024px; margin:auto; position:absolute; font-size: 9pt; color: #777777;">
+                <canvas id="cv2" style="border: 1px solid;" width="1024" height="768" ></canvas>
+                    <div align="center">
+                        <button id="previous2">Previous</button>
+                        <button id="next2">Next</button>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="tab-content">
+                <div style="width:1024px; margin:auto; position:absolute; font-size: 9pt; color: #777777;">
+                <canvas id="cv3" style="border: 1px solid;" width="1024" height="768" ></canvas>
+                    <div align="center">
+                        <button id="previous3">Previous</button>
+                        <button id="next3">Next</button>
+                    </div>
+                </div>
+            </div>
+    
         </div>
- </div>
 
- <div class="tab-content">
-       <div style="width:1024px; margin:auto; position:absolute; font-size: 9pt; color: #777777;">
-        	<canvas id="cv3" style="border: 1px solid;" width="1024" height="768" ></canvas>
-            <div align="center">
-    		<button id="previous3">Previous</button>
-    		<button id="next3">Next</button>
-    		</div>
-        </div>
- </div>
-
-
-
-</div>
-
-</section>
+	</section>
 
 <script type="text/javascript">
-			var canvas1, canvas2, canvas3;
-			var viewer1, viewer2, viewer3;
-			var path = "/Users/mario/Work/Projects/TRADR/jsc3d/demos/models/";
-			var counter1, counter2, counter3;
-			counter1 = counter2 = counter3 = 0;
-			var model_list = ['ptero.obj','parasau.obj','tirarex.obj'];
+
+var path = "/Users/mario/Work/Projects/TRADR/jsc3d/demos/models/";
+var model_list = ['ptero.obj','parasau.obj','tirarex.obj'];
+			
+var canvas = [];
+var viewer = [];
+var counter = [];
+var next_buttons = ['next1','next2','next3'];
+var previous_buttons = ['previous1','previous2','previous3'];
+
+canvas[0] = document.getElementById('cv1');
+canvas[1] = document.getElementById('cv2');
+canvas[2] = document.getElementById('cv3');
+counter[0] = 0;
+counter[1] = 0;
+counter[2] = 0;
+
+
+window.onload = function() {
+	for (i in canvas)
+	{
+		viewer[i] = new JSC3D.Viewer(canvas[i]);
+		viewer[i].setParameter('SceneUrl', path + model_list[counter[i]]);
+		viewer[i].setParameter('InitRotationX', 0);
+		viewer[i].setParameter('InitRotationY', -30);
+		viewer[i].setParameter('InitRotationZ', 0);
+		viewer[i].setParameter('ModelColor', '#FFFFFF');
+		viewer[i].setParameter('BackgroundColor1', '#AFAFAF');
+		viewer[i].setParameter('BackgroundColor2', '#000000');
+		viewer[i].setParameter('RenderMode', 'texturesmooth');
+		viewer[i].setParameter('MipMapping', 'on');
+		viewer[i].init();
+		viewer[i].update();
+	}
+
+	document.getElementById(next_buttons[0]).addEventListener('click',function(e) {counter[0] = next(counter[0],viewer[0]);});
+	document.getElementById(previous_buttons[0]).addEventListener('click',function(e) {counter[0] = previous(counter[0],viewer[0]);});
+	document.getElementById(next_buttons[1]).addEventListener('click',function(e) {counter[1] = next(counter[1],viewer[1]);});
+	document.getElementById(previous_buttons[1]).addEventListener('click',function(e) {counter[1] = previous(counter[1],viewer[1]);});
+	document.getElementById(next_buttons[2]).addEventListener('click',function(e) {counter[2] = next(counter[2],viewer[2]);});
+	document.getElementById(previous_buttons[2]).addEventListener('click',function(e) {counter[2] = previous(counter[2],viewer[2]);});
+	
+	document.getElementById("tab1").click();
+}
 			
 			
-			window.onload = function() {
-				canvas1 = document.getElementById('cv1');
-				viewer1 = new JSC3D.Viewer(canvas1);
-				viewer1.setParameter('SceneUrl', path + model_list[counter1]);
-				viewer1.setParameter('InitRotationX', 0);
-				viewer1.setParameter('InitRotationY', -30);
-				viewer1.setParameter('InitRotationZ', 0);
-				viewer1.setParameter('ModelColor', '#FFFFFF');
-				viewer1.setParameter('BackgroundColor1', '#AFAFAF');
-				viewer1.setParameter('BackgroundColor2', '#000000');
-				viewer1.setParameter('RenderMode', 'texturesmooth');
-				viewer1.setParameter('MipMapping', 'on');
-				viewer1.init();
-				viewer1.update();
-				canvas2 = document.getElementById('cv2');
-				viewer2 = new JSC3D.Viewer(canvas2);
-				viewer2.setParameter('SceneUrl', path + model_list[counter2]);
-				viewer2.setParameter('InitRotationX', 0);
-				viewer2.setParameter('InitRotationY', -30);
-				viewer2.setParameter('InitRotationZ', 0);
-				viewer2.setParameter('ModelColor', '#FFFFFF');
-				viewer2.setParameter('BackgroundColor1', '#AFAFAF');
-				viewer2.setParameter('BackgroundColor2', '#000000');
-				viewer2.setParameter('RenderMode', 'texturesmooth');
-				viewer2.setParameter('MipMapping', 'on');
-				viewer2.init();
-				viewer2.update();
-				canvas3 = document.getElementById('cv3');
-				viewer3 = new JSC3D.Viewer(canvas3);
-				viewer3.setParameter('SceneUrl', path + model_list[counter3]);
-				viewer3.setParameter('InitRotationX', 0);
-				viewer3.setParameter('InitRotationY', -30);
-				viewer3.setParameter('InitRotationZ', 0);
-				viewer3.setParameter('ModelColor', '#FFFFFF');
-				viewer3.setParameter('BackgroundColor1', '#AFAFAF');
-				viewer3.setParameter('BackgroundColor2', '#000000');
-				viewer3.setParameter('RenderMode', 'texturesmooth');
-				viewer3.setParameter('MipMapping', 'on');
-				viewer3.init();
-				viewer3.update();
-				
-				document.getElementById('next1').addEventListener('click',function(e) {counter1 = next(counter1,viewer1);});
-				document.getElementById('next2').addEventListener('click',function(e) {counter2 = next(counter2,viewer2);});
-				document.getElementById('next3').addEventListener('click',function(e) {counter3 = next(counter3,viewer3);});
-				document.getElementById('previous1').addEventListener('click',function(e) {counter1 = previous(counter1,viewer1);});
-				document.getElementById('previous2').addEventListener('click',function(e) {counter2 = previous(counter2,viewer2);});
-				document.getElementById('previous3').addEventListener('click',function(e) {counter3 = previous(counter3,viewer3);});
-				
-				document.getElementById("tab1").click();
-				
-			}
+function next(counter,viewer) 
+{
+	counter = (counter < model_list.length - 1) ? counter + 1 : counter; 
+	viewer.replaceSceneFromUrl(path + model_list[counter]);
+	viewer.update();
+	return counter;
+}
 			
-			
-			function next(counter,viewer) 
-			{
-				counter = (counter < model_list.length - 1) ? counter + 1 : counter; 
-				viewer.replaceSceneFromUrl(path + model_list[counter]);
-				viewer.update();
-				return counter;
-			}
-			
-			function previous(counter,viewer) 
-			{
-				counter = (counter > 0) ? counter - 1 : counter; 
-				viewer.replaceSceneFromUrl(path + model_list[counter]);
-				viewer.update();
-				return counter;
-			}
+function previous(counter,viewer) 
+{
+	counter = (counter > 0) ? counter - 1 : counter; 
+	viewer.replaceSceneFromUrl(path + model_list[counter]);
+	viewer.update();
+	return counter;
+}
+
 </script>
 
 
