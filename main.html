@@ -32,6 +32,15 @@
     
             <div class="tab-content">
                 <div style="width:1024px; margin:auto; position:absolute; font-size: 9pt; color: #777777;">
+                <label for="global_map" style="margin-left:1048px; position:inherit">Global&nbsp;Map</label>
+                <div id="global_map" style="margin-left:1048px; margin-top:20px; position:inherit;">
+            		<select id="model_list">
+					<option>ptero.obj</option>
+					<option>tirarex.obj</option>
+					<option>parasau.obj</option>
+					</select>
+        		</div>
+                
                 <canvas id="cv1" style="border: 1px solid;" width="1024" height="768" ></canvas>
                     <div align="center">
                         <button id="previous1">Previous</button>
@@ -82,6 +91,8 @@ counter[0] = 0;
 counter[1] = 0;
 counter[2] = 0;
 
+var conn;
+
 
 window.onload = function() {
 	for (i in canvas)
@@ -108,6 +119,10 @@ window.onload = function() {
 	document.getElementById(previous_buttons[2]).addEventListener('click',function(e) {counter[2] = previous(counter[2],viewer[2]);});
 	
 	document.getElementById("tab1").click();
+	
+	conn = new Stardog.Connection();
+	conn.setEndpoint("http://localhost:5820/");
+	conn.setCredentials("admin", "admin");
 }
 			
 			
