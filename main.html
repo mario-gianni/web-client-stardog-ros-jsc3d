@@ -34,17 +34,44 @@
                 <div style="width:1024px; margin:auto; position:absolute; font-size: 9pt; color: #777777;">
                 <label for="global_map" style="margin-left:1048px; position:inherit">Global&nbsp;Map</label>
                 <div id="global_map" style="margin-left:1048px; margin-top:20px; position:inherit;">
-            		<select id="model_list">
-					<option>ptero.obj</option>
-					<option>tirarex.obj</option>
-					<option>parasau.obj</option>
-					</select>
+                    
+                    <form action="">
+ 						<select name="global_map_list" id="global_map_list">
+  							<optgroup label="Global Metric Map">
+   								<option>Global Occupancy Grid Map</option>
+   								<option>Global Point Cloud Map</option>
+  							</optgroup>
+ 
+                            <optgroup label="Global Semantic Map">
+                               <option>Global Object Map</option>
+                               <option>Global Polygonal Mesh Map</option>
+                               <option>Global Segmented Map</option>
+                               <option>Global Topological Map</option>
+                               <option>Global Traversability Map</option>
+                            </optgroup>
+                            
+                            <optgroup label="Global Threedimensional Map">
+                               <option>Global CAD Model</option>
+                               <option>Global Collada Model</option>
+                               <option>Global URDF Map</option>
+                            </optgroup>
+                            
+                            <option>Global WiFi Map</option>
+                            <option>Earth View</option>
+                            <option>Street View</option>
+                         </select>
+                    </form>
+
         		</div>
                 
                 <canvas id="cv1" style="border: 1px solid;" width="1024" height="768" ></canvas>
                     <div align="center">
                         <button id="previous1">Previous</button>
                         <button id="next1">Next</button>
+                     	<button id="Load" style="margin-left:860px">Load</button>
+                    </div>
+                    <div style="margin-left:1024px; position:inherit;">
+                    	
                     </div>
                 </div>
              </div>
