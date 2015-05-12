@@ -1,0 +1,1057 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+
+
+<rdf:RDF xmlns="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#"
+     xml:base="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#connectAOIPortalTo -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#connectAOIPortalTo">
+        <rdf:type rdf:resource="&owl;InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#AreaOfInterest"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#Portal"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#connectLevelPortalTo -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#connectLevelPortalTo">
+        <rdf:type rdf:resource="&owl;InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#Level"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#Portal"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#hasGlobalMap -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#hasGlobalMap">
+        <rdf:type rdf:resource="&owl;InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#DisasterScenario"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#GlobalMap"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#hasLevel -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#hasLevel">
+        <rdf:type rdf:resource="&owl;InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#DisasterScenario"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#Level"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#hasLevelMap -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#hasLevelMap">
+        <rdf:type rdf:resource="&owl;InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#Level"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#LevelMap"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#hasLocalMap -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#hasLocalMap">
+        <rdf:type rdf:resource="&owl;InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#AreaOfInterest"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#LocalMap"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#hasPortal -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#hasPortal">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#AreaOfInterest"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#Portal"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#hasScreenshot -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#hasScreenshot">
+        <rdf:type rdf:resource="&owl;InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#AreaOfInterest"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#ScreenShot"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#isComposedOfAOI -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#isComposedOfAOI">
+        <rdf:type rdf:resource="&owl;InverseFunctionalProperty"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#AreaOfInterest"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#Level"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#isComposedOfLevelMap -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#isComposedOfLevelMap">
+        <rdf:type rdf:resource="&owl;InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#GlobalMap"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#LevelMap"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#isComposedOfLocalMap -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#isComposedOfLocalMap">
+        <rdf:type rdf:resource="&owl;InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#LevelMap"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#LocalMap"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#isConnectedByAOIPortal -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#isConnectedByAOIPortal">
+        <rdf:type rdf:resource="&owl;InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#AreaOfInterest"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#Portal"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#isConnectedByLevelPortal -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#isConnectedByLevelPortal">
+        <rdf:type rdf:resource="&owl;InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#Level"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#Portal"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#hasLevelName -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#hasLevelName">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#Level"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#AreaOfInterest -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#AreaOfInterest">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty>
+                    <rdf:Description>
+                        <owl:inverseOf rdf:resource="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#isComposedOfAOI"/>
+                    </rdf:Description>
+                </owl:onProperty>
+                <owl:someValuesFrom rdf:resource="&owl;Thing"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#ControlRoom -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#ControlRoom">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#Indoor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#Corridor -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#Corridor">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#Portal"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#Courtyard -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#Courtyard">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#Outdoor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#DisasterScenario -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#DisasterScenario">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#hasLevel"/>
+                <owl:someValuesFrom rdf:resource="&owl;Thing"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointUnionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#Semistructured"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#Structured"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#Unstructured"/>
+        </owl:disjointUnionOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#Door -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#Door">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#Portal"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#EarthView -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#EarthView">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#GlobalMap"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#Elevator -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#Elevator">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#Portal"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#EmptySpace -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#EmptySpace">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#Outdoor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#Entrance -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#Entrance">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#Portal"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#Exit -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#Exit">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#Portal"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#FloorPlan -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#FloorPlan">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#LevelMap"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#FlowerBed -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#FlowerBed">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#Outdoor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#GenericRoom -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#GenericRoom">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#Indoor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#GlobalCADModel -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#GlobalCADModel">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#GlobalThreeDimensionalMap"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#GlobalColladaModel -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#GlobalColladaModel">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#GlobalThreeDimensionalMap"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#GlobalMap -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#GlobalMap">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#isComposedOfLevelMap"/>
+                <owl:someValuesFrom rdf:resource="&owl;Thing"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty>
+                    <rdf:Description>
+                        <owl:inverseOf rdf:resource="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#hasGlobalMap"/>
+                    </rdf:Description>
+                </owl:onProperty>
+                <owl:someValuesFrom rdf:resource="&owl;Thing"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#GlobalMetricMap -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#GlobalMetricMap">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#GlobalMap"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#GlobalObjectMap -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#GlobalObjectMap">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#GlobalSemanticMap"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#GlobalOccupancyGridMap -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#GlobalOccupancyGridMap">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#GlobalMetricMap"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#GlobalPointCloudMap -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#GlobalPointCloudMap">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#GlobalMetricMap"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#GlobalPolygonalMeshMap -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#GlobalPolygonalMeshMap">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#GlobalSemanticMap"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#GlobalSegmentedMap -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#GlobalSegmentedMap">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#GlobalSemanticMap"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#GlobalSemanticMap -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#GlobalSemanticMap">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#GlobalMap"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#GlobalThreeDimensionalMap -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#GlobalThreeDimensionalMap">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#GlobalMap"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#GlobalTopologicalMap -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#GlobalTopologicalMap">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#GlobalSemanticMap"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#GlobalTraversabilityMap -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#GlobalTraversabilityMap">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#GlobalSemanticMap"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#GlobalURDFModel -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#GlobalURDFModel">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#GlobalThreeDimensionalMap"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#GlobalWiFiMap -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#GlobalWiFiMap">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#GlobalMap"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#Hole -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#Hole">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#Portal"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#ImageFromRobotCamera -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#ImageFromRobotCamera">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#ScreenShot"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#ImageFromWeb -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#ImageFromWeb">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#ScreenShot"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#Indoor -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#Indoor">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#AreaOfInterest"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#Laboratory -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#Laboratory">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#Indoor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#Level -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#Level">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#isComposedOfAOI"/>
+                <owl:someValuesFrom rdf:resource="&owl;Thing"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty>
+                    <rdf:Description>
+                        <owl:inverseOf rdf:resource="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#isComposedOfLevelMap"/>
+                    </rdf:Description>
+                </owl:onProperty>
+                <owl:someValuesFrom rdf:resource="&owl;Thing"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty>
+                    <rdf:Description>
+                        <owl:inverseOf rdf:resource="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#hasLevel"/>
+                    </rdf:Description>
+                </owl:onProperty>
+                <owl:someValuesFrom rdf:resource="&owl;Thing"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#LevelCADModel -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#LevelCADModel">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#LevelThreeDimensionalMap"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#LevelColladaModel -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#LevelColladaModel">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#LevelThreeDimensionalMap"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#LevelMap -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#LevelMap">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#isComposedOfLocalMap"/>
+                <owl:someValuesFrom rdf:resource="&owl;Thing"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty>
+                    <rdf:Description>
+                        <owl:inverseOf rdf:resource="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#hasLevelMap"/>
+                    </rdf:Description>
+                </owl:onProperty>
+                <owl:someValuesFrom rdf:resource="&owl;Thing"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#LevelMetricMap -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#LevelMetricMap">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#LevelMap"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#LevelObjectMap -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#LevelObjectMap">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#LevelSemanticMap"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#LevelOccupancyGrdMap -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#LevelOccupancyGrdMap">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#LevelMetricMap"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#LevelPointCloudMap -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#LevelPointCloudMap">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#LevelMetricMap"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#LevelPolygonalMeshMap -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#LevelPolygonalMeshMap">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#LevelSemanticMap"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#LevelSegmentedMap -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#LevelSegmentedMap">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#LevelSemanticMap"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#LevelSemanticMap -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#LevelSemanticMap">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#LevelMap"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#LevelThreeDimensionalMap -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#LevelThreeDimensionalMap">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#LevelMap"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#LevelTopologicalMap -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#LevelTopologicalMap">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#LevelSemanticMap"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#LevelTraversabilityMap -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#LevelTraversabilityMap">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#LevelSemanticMap"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#LevelURDFModel -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#LevelURDFModel">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#LevelThreeDimensionalMap"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#LevelWiFiMap -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#LevelWiFiMap">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#LevelMap"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#LocalCADModel -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#LocalCADModel">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#LocalThreeDimensionalMap"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#LocalColladaModel -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#LocalColladaModel">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#LocalThreeDimensionalMap"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#LocalMap -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#LocalMap">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty>
+                    <rdf:Description>
+                        <owl:inverseOf rdf:resource="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#hasLocalMap"/>
+                    </rdf:Description>
+                </owl:onProperty>
+                <owl:someValuesFrom rdf:resource="&owl;Thing"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty>
+                    <rdf:Description>
+                        <owl:inverseOf rdf:resource="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#isComposedOfLocalMap"/>
+                    </rdf:Description>
+                </owl:onProperty>
+                <owl:someValuesFrom rdf:resource="&owl;Thing"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#LocalMetricMap -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#LocalMetricMap">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#LocalMap"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#LocalObjectMap -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#LocalObjectMap">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#LocalSemanticMap"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#LocalOccupancyGridMap -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#LocalOccupancyGridMap">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#LocalMetricMap"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#LocalPointCloudMap -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#LocalPointCloudMap">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#LocalMetricMap"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#LocalPolygonalMeshMap -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#LocalPolygonalMeshMap">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#LocalSemanticMap"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#LocalSegmentedMap -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#LocalSegmentedMap">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#LocalSemanticMap"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#LocalSemanticMap -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#LocalSemanticMap">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#LocalMap"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#LocalThreeDimensionalMap -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#LocalThreeDimensionalMap">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#LocalMap"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#LocalTopologicalMap -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#LocalTopologicalMap">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#LocalSemanticMap"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#LocalTraversabilityMap -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#LocalTraversabilityMap">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#LocalSemanticMap"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#LocalURDFModel -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#LocalURDFModel">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#LocalThreeDimensionalMap"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#Office -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#Office">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#Indoor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#Outdoor -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#Outdoor">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#AreaOfInterest"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#ParkingLot -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#ParkingLot">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#Outdoor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#Portal -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#Portal">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty>
+                    <rdf:Description>
+                        <owl:inverseOf rdf:resource="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#isConnectedByLevelPortal"/>
+                    </rdf:Description>
+                </owl:onProperty>
+                <owl:someValuesFrom rdf:resource="&owl;Thing"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty>
+                    <rdf:Description>
+                        <owl:inverseOf rdf:resource="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#connectLevelPortalTo"/>
+                    </rdf:Description>
+                </owl:onProperty>
+                <owl:someValuesFrom rdf:resource="&owl;Thing"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty>
+                    <rdf:Description>
+                        <owl:inverseOf rdf:resource="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#connectAOIPortalTo"/>
+                    </rdf:Description>
+                </owl:onProperty>
+                <owl:someValuesFrom rdf:resource="&owl;Thing"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty>
+                    <rdf:Description>
+                        <owl:inverseOf rdf:resource="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#isConnectedByAOIPortal"/>
+                    </rdf:Description>
+                </owl:onProperty>
+                <owl:someValuesFrom rdf:resource="&owl;Thing"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#Ramp -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#Ramp">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#Portal"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#Road -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#Road">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#Portal"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#ScreenShot -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#ScreenShot">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty>
+                    <rdf:Description>
+                        <owl:inverseOf rdf:resource="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#hasScreenshot"/>
+                    </rdf:Description>
+                </owl:onProperty>
+                <owl:someValuesFrom rdf:resource="&owl;Thing"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#Semistructured -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#Semistructured">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#DisasterScenario"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#Skylight -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#Skylight">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#Portal"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#SmokeStack -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#SmokeStack">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#Portal"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#Staircase -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#Staircase">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#Portal"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#Storage -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#Storage">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#Indoor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#StreetView -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#StreetView">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#GlobalMap"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#Structured -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#Structured">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#DisasterScenario"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#TransformerRoom -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#TransformerRoom">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#Indoor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#Tunnel -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#Tunnel">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#Portal"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#Unstructured -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#Unstructured">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#DisasterScenario"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#Warehouse -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#Warehouse">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#Indoor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#Window -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#Window">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#Portal"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#level0 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#level0">
+        <rdf:type rdf:resource="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#Level"/>
+        <hasLevelName rdf:datatype="&xsd;string">basement</hasLevelName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#level1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#level1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#Level"/>
+        <hasLevelName rdf:datatype="&xsd;string">first level</hasLevelName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#level2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#level2">
+        <rdf:type rdf:resource="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#Level"/>
+        <hasLevelName rdf:datatype="&xsd;string">second floor</hasLevelName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#level3 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#level3">
+        <rdf:type rdf:resource="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#Level"/>
+        <hasLevelName rdf:datatype="&xsd;string">third floor</hasLevelName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#level4 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#level4">
+        <rdf:type rdf:resource="http://www.semanticweb.org/mario/ontologies/2015/4/untitled-ontology-18#Level"/>
+        <hasLevelName rdf:datatype="&xsd;string">fourth floor</hasLevelName>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.5.1) http://owlapi.sourceforge.net -->
+

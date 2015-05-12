@@ -26,7 +26,8 @@
             <ul>
                 <li tab="tab1" id="tab1" class="first current">Disaster Site</li>
                 <li tab="tab2">Levels</li>
-                <li tab="tab3" class="last">Area of Interest</li>
+                <li tab="tab3">Area of Interest</li>
+                <li tab="tab4" class="last">Data Management</li>
        
             </ul>
     
@@ -37,6 +38,7 @@
                     
                     <form action="">
  						<select name="global_map_list" id="global_map_list">
+                        	<option value="">Please select..</option>
   							<optgroup label="Global Metric Map">
    								<option>Global Occupancy Grid Map</option>
    								<option>Global Point Cloud Map</option>
@@ -68,32 +70,144 @@
                     <div align="center">
                         <button id="previous1">Previous</button>
                         <button id="next1">Next</button>
-                     	<button id="Load" style="margin-left:860px">Load</button>
-                    </div>
-                    <div style="margin-left:1024px; position:inherit;">
-                    	
+                     	<button id="load1" style="margin-left:860px">Load</button>
                     </div>
                 </div>
              </div>
     
             <div class="tab-content">
                 <div style="width:1024px; margin:auto; position:absolute; font-size: 9pt; color: #777777;">
+                <label for="div-levels-cv2" style="margin-left:1048px; position:inherit">Levels</label>
+                <div id="div-levels-cv2" style="margin-left:1048px; margin-top:20px; position:inherit;">
+					<select id="sel-levels-cv2">
+                    	<option>Please select..</option>
+                    	<option>Ground level</option>
+                        <option>First level</option>
+                        <option>Second level</option>
+                    </select>
+        		</div>
+                <label for="div-level_map-cv2" style="margin-left:1048px; margin-top:60px; position:inherit">Level&nbsp;Map</label>
+                <div id="div-level_map-cv2" style="margin-left:1048px; margin-top:80px; position:inherit;">
+					<form action="">
+ 						<select name="level_map_list-cv2" id="level_map_list-cv2">
+                        	<option value="">Please select..</option>
+  							<optgroup label="Level Metric Map">
+   								<option>Level Occupancy Grid Map</option>
+   								<option>Level Point Cloud Map</option>
+  							</optgroup>
+ 
+                            <optgroup label="Level Semantic Map">
+                               <option>Level Object Map</option>
+                               <option>Level Polygonal Mesh Map</option>
+                               <option>Level Segmented Map</option>
+                               <option>Level Topological Map</option>
+                               <option>Level Traversability Map</option>
+                            </optgroup>
+                            
+                            <optgroup label="Level Threedimensional Map">
+                               <option>Level CAD Model</option>
+                               <option>Level Collada Model</option>
+                               <option>Level URDF Map</option>
+                            </optgroup>
+                            
+                            <option>Level WiFi Map</option>
+                            <option>Floor-plan</option>
+                         </select>
+                    </form>
+        		</div>
+                <label for="aoi-cv2" style="margin-left:1048px; margin-top:120px; position:inherit">Area&nbsp;of&nbsp;Interest</label>
+                <div id="aoi-cv2" style="margin-left:1048px; margin-top:140px; position:inherit">
+                	<form action="">
+ 						<select name="aoi_list-cv2" id="aoi_list-cv2">
+                        	<option value="">Please select..</option>
+  							<optgroup label="Indoor">
+   								
+  							</optgroup>
+ 
+                            <optgroup label="Outdoor">
+                              
+                            </optgroup>
+                           
+                         </select>
+                    </form>
+                </div>
+                
                 <canvas id="cv2" style="border: 1px solid;" width="1024" height="768" ></canvas>
                     <div align="center">
                         <button id="previous2">Previous</button>
                         <button id="next2">Next</button>
+                        <button id="load2" style="margin-left:860px">Load</button>
                     </div>
                 </div>
             </div>
     
             <div class="tab-content">
                 <div style="width:1024px; margin:auto; position:absolute; font-size: 9pt; color: #777777;">
+                
+                <label for="div-levels-cv3" style="margin-left:1048px; position:inherit">Levels</label>
+                <div id="div-levels-cv3" style="margin-left:1048px; margin-top:20px; position:inherit;">
+					<select id="sel-levels-cv3">
+                    	<option value="">Please select..</option>
+                    	<option>Ground level</option>
+                        <option>First level</option>
+                        <option>Second level</option>
+                    </select>
+        		</div>
+                <label for="aoi-cv3" style="margin-left:1048px; margin-top:60px; position:inherit">Area&nbsp;of&nbsp;Interest</label>
+                <div id="aoi-cv3" style="margin-left:1048px; margin-top:80px; position:inherit">
+                	<form action="">
+ 						<select name="aoi_list-cv3" id="aoi_list-cv3">
+                        	<option value="">Please select..</option>
+  							<optgroup label="Indoor">
+   								
+  							</optgroup>
+ 
+                            <optgroup label="Outdoor">
+                              
+                            </optgroup>
+                           
+                         </select>
+                    </form>
+                </div>
+                <label for="local_map" style="margin-left:1048px; margin-top:120px; position:inherit">Local&nbsp;Map</label>
+                <div id="local_map" style="margin-left:1048px; margin-top:140px; position:inherit;">
+					<form action="">
+ 						<select name="local_map_list" id="local_map_list">
+                        	<option value="">Please select..</option>
+  							<optgroup label="Local Metric Map">
+   								<option>Local Occupancy Grid Map</option>
+   								<option>Local Point Cloud Map</option>
+  							</optgroup>
+ 
+                            <optgroup label="Local Semantic Map">
+                               <option>Local Object Map</option>
+                               <option>Local Polygonal Mesh Map</option>
+                               <option>Local Segmented Map</option>
+                               <option>Local Topological Map</option>
+                               <option>Local Traversability Map</option>
+                            </optgroup>
+                            
+                            <optgroup label="Local Threedimensional Map">
+                               <option>Local CAD Model</option>
+                               <option>Local Collada Model</option>
+                               <option>Local URDF Map</option>
+                            </optgroup>
+                            
+                         </select>
+                    </form>
+        		</div>
+                
                 <canvas id="cv3" style="border: 1px solid;" width="1024" height="768" ></canvas>
                     <div align="center">
                         <button id="previous3">Previous</button>
                         <button id="next3">Next</button>
+                        <button id="load3" style="margin-left:860px">Load</button>
                     </div>
                 </div>
+            </div>
+            
+            <div class="tab-content">
+                
             </div>
     
         </div>
@@ -145,11 +259,19 @@ window.onload = function() {
 	document.getElementById(next_buttons[2]).addEventListener('click',function(e) {counter[2] = next(counter[2],viewer[2]);});
 	document.getElementById(previous_buttons[2]).addEventListener('click',function(e) {counter[2] = previous(counter[2],viewer[2]);});
 	
-	document.getElementById("tab1").click();
-	
+		
 	conn = new Stardog.Connection();
 	conn.setEndpoint("http://localhost:5820/");
 	conn.setCredentials("admin", "admin");
+	
+	document.getElementById("tab1").click();
+	
+	<!---->document.getElementById('sel-levels-cv2').options.length = 1;
+	<!---->document.getElementById('sel-levels-cv2').addEventListener('mousedown',function(e){getLevelNames(document.getElementById('sel-levels-cv2'));});
+	
+	getLevelNames(document.getElementById('sel-levels-cv2'));
+	getLevelNames(document.getElementById('sel-levels-cv3'));
+	
 }
 			
 			
@@ -167,6 +289,31 @@ function previous(counter,viewer)
 	viewer.replaceSceneFromUrl(path + model_list[counter]);
 	viewer.update();
 	return counter;
+}
+
+function getLevelNames(selectID)
+{
+	selectID.options.length = 1;
+	conn.query({
+		database: "tradr-domain",
+		query: "select ?levelname where {?level a :Level . ?level :hasLevelName ?levelname}",
+        limit: 10,
+        offset: 0
+		},
+    	function (data) {
+			expect(data).not.to.be(null);
+            expect(data.results).not.to.be(undefined);
+            expect(data.results.bindings).not.to.be(undefined);
+			console.log(data.results.bindings);
+			
+			var bindings = data.results.bindings;		
+			for(i in bindings) {
+				var binding = bindings[i];
+				for(n in binding) {
+					selectID.options[selectID.options.length] = new Option(binding[n].value, n);
+					}
+			}
+	});
 }
 
 </script>

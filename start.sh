@@ -7,5 +7,5 @@ export PATH=/Users/mario/Work/Projects/TRADR/stardog-3.0.1/bin:$PATH
 stardog-admin server start
 
 #create stardog database
-stardog-admin db drop -n dbExample
-stardog-admin db create -n dbExample -o search.enabled=true -- ontology/stardog_example.owl
+stardog-admin db drop -n tradr-domain
+stardog-admin db create -n tradr-domain -o search.enabled=true -- ontology/domain.owl
