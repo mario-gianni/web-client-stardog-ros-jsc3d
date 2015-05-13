@@ -146,9 +146,6 @@
                 <div id="div-levels-cv3" style="margin-left:1048px; margin-top:20px; position:inherit;">
 					<select id="sel-levels-cv3">
                     	<option value="">Please select..</option>
-                    	<option>Ground level</option>
-                        <option>First level</option>
-                        <option>Second level</option>
                     </select>
         		</div>
                 <label for="aoi-cv3" style="margin-left:1048px; margin-top:60px; position:inherit">Area&nbsp;of&nbsp;Interest</label>
@@ -277,6 +274,8 @@ window.onload = function() {
 	
 
 	document.getElementById('sel-levels-cv2').addEventListener('mouseover',function(e){getLevelNamesQuery(document.getElementById('sel-levels-cv2'),getLevelNamesCallback);});
+	document.getElementById('sel-levels-cv3').addEventListener('mouseover',function(e){getLevelNamesQuery(document.getElementById('sel-levels-cv3'),getLevelNamesCallback);});
+
 	
 	<!---->getLevelNames(document.getElementById('sel-levels-cv2'));
 	<!---->getLevelNames(document.getElementById('sel-levels-cv3'));
