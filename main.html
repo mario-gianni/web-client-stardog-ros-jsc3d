@@ -17,6 +17,7 @@
     <script src="js/index.js" type="text/javascript"></script>
     <script src="js/lodash.js" type="text/javascript"></script>
    	<script src="js/stardog.js" type="text/javascript"></script>
+    <script src="js/hashmap.js" type="text/javascript"></script>
 
 
 	<section id="wrapper" class="wrapper">
@@ -81,9 +82,6 @@
                 <div id="div-levels-cv2" style="margin-left:1048px; margin-top:20px; position:inherit;">
 					<select id="sel-levels-cv2">
                     	<option>Please select..</option>
-                    	<option>Ground level</option>
-                        <option>First level</option>
-                        <option>Second level</option>
                     </select>
         		</div>
                 <label for="div-level_map-cv2" style="margin-left:1048px; margin-top:60px; position:inherit">Level&nbsp;Map</label>
@@ -234,6 +232,17 @@ counter[2] = 0;
 
 var conn;
 
+var sel_map = new HashMap();
+sel_map.set(document.getElementById('sel-levels-cv2'),0);
+sel_map.set(document.getElementById('sel-levels-cv3'),1);
+var list_map = new HashMap();
+var sel_level_cv2 = [];
+var sel_level_cv3 = [];
+sel_level_cv2[0] = document.getElementById('sel-levels-cv2').options[0];
+sel_level_cv3[0] = document.getElementById('sel-levels-cv3').options[0];
+list_map.set(0,sel_level_cv2);
+list_map.set(1,sel_level_cv3);
+
 
 window.onload = function() {
 	for (i in canvas)
@@ -266,11 +275,15 @@ window.onload = function() {
 	
 	document.getElementById("tab1").click();
 	
-	<!---->document.getElementById('sel-levels-cv2').options.length = 1;
-	<!---->document.getElementById('sel-levels-cv2').addEventListener('mousedown',function(e){getLevelNames(document.getElementById('sel-levels-cv2'));});
+
+	document.getElementById('sel-levels-cv2').addEventListener('mouseover',function(e){getLevelNamesQuery(document.getElementById('sel-levels-cv2'),getLevelNamesCallback);});
 	
-	getLevelNames(document.getElementById('sel-levels-cv2'));
-	getLevelNames(document.getElementById('sel-levels-cv3'));
+	<!---->getLevelNames(document.getElementById('sel-levels-cv2'));
+	<!---->getLevelNames(document.getElementById('sel-levels-cv3'));
+	
+	<!-->$(document).on('click','#sel-levels-cv2',function(){alert(document.getElementById('sel-levels-cv2').options[document.getElementById('sel-levels-cv2').selectedIndex].text);});
+	
+	<!-->document.getElementById('sel-levels-cv2').onmousedown = getLevelNames(document.getElementById('sel-levels-cv2'));
 	
 }
 			
@@ -291,29 +304,92 @@ function previous(counter,viewer)
 	return counter;
 }
 
-function getLevelNames(selectID)
+function getLevelNamesQuery(selectID,callback)
 {
-	selectID.options.length = 1;
 	conn.query({
-		database: "tradr-domain",
-		query: "select ?levelname where {?level a :Level . ?level :hasLevelName ?levelname}",
-        limit: 10,
-        offset: 0
-		},
-    	function (data) {
-			expect(data).not.to.be(null);
-            expect(data.results).not.to.be(undefined);
-            expect(data.results.bindings).not.to.be(undefined);
-			console.log(data.results.bindings);
-			
-			var bindings = data.results.bindings;		
-			for(i in bindings) {
-				var binding = bindings[i];
-				for(n in binding) {
-					selectID.options[selectID.options.length] = new Option(binding[n].value, n);
-					}
+			database: "tradr-domain",
+			query: "select ?levelname where {?level a :Level . ?level :hasLevelName ?levelname}",
+			limit: 10,
+			offset: 0
+			},
+			function (data) {
+				expect(data).not.to.be(null);
+				expect(data.results).not.to.be(undefined);
+				expect(data.results.bindings).not.to.be(undefined);
+				console.log(data.results.bindings);
+				
+				var bindings = data.results.bindings;
+				callback(selectID,bindings);
+				
+		});
+}
+
+function getLevelNamesCallback(selectID,bindings)
+{
+	var list_temp = [];
+	list_temp[0] = selectID.options[0].text;
+	
+	var k = 1;
+	for(i in bindings) {
+		var binding = bindings[i];
+		for(n in binding) {
+			list_temp[k] = binding[n].value;
+			k++;
+		}
+	}
+		
+	var sel_temp = list_map.get(sel_map.get(selectID));
+				
+	if(!(equal(sel_temp,list_temp)))
+	{
+		console.log("Select is changed");
+		/* Prendo il puntatore della select */
+		var index = selectID.selectedIndex;
+		var text = selectID.options[index].text;
+		/* Svuoto la select e svuoto la lista */
+		selectID.options.length = 0;
+		sel_temp = [];
+		for(i = 0; i < list_temp.length; i++)
+		{
+			sel_temp[i] = list_temp[i];
+			selectID.options[selectID.options.length] = new Option(list_temp[i], i);
+		}
+		
+		list_map.set(sel_map.get(selectID),sel_temp);
+		for(i = 0; i < selectID.options.length; i++)
+		{
+			if(selectID.options[i].text == text)
+			{
+				console.log("Matching of selection");
+				selectID.selectedIndex = i;
 			}
-	});
+		}
+			
+	}
+	else
+	{
+		console.log("Select is not changed");
+	}
+}
+
+function equal(arr1, arr2) {
+
+  var i = arr1.length;
+  if (i === 0 || i !== arr2.length) {
+    return false;
+  }
+
+  while(i--) {
+    if (arr1[i] instanceof Array && arr2[i] instanceof Array) {
+      if (!equal(arr1[i], arr2[i])) {
+        return false;
+      }
+    } else if (arr1[i] !== arr2[i]) {
+      return false;
+    }
+  }
+
+  return true;
 }
 
 </script>
