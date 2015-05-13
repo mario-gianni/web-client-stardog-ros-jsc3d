@@ -275,6 +275,8 @@ window.onload = function() {
 
 	document.getElementById('sel-levels-cv2').addEventListener('mouseover',function(e){getLevelNamesQuery(document.getElementById('sel-levels-cv2'),getLevelNamesCallback);});
 	document.getElementById('sel-levels-cv3').addEventListener('mouseover',function(e){getLevelNamesQuery(document.getElementById('sel-levels-cv3'),getLevelNamesCallback);});
+	
+	document.getElementById('level_map_list-cv2').addEventListener('click',function(e){getLevelMapsWithClassAndFilenameOfAllLevelsQuery(getLevelMapsWithClassAndFilenameOfAllLevelsCallback);});
 
 	
 	<!---->getLevelNames(document.getElementById('sel-levels-cv2'));
@@ -301,6 +303,30 @@ function previous(counter,viewer)
 	viewer.replaceSceneFromUrl(path + model_list[counter]);
 	viewer.update();
 	return counter;
+}
+
+function getLevelMapsWithClassAndFilenameOfAllLevelsQuery(callback)
+{
+	conn.query({
+			database: "tradr-domain",
+			query: "select distinct ?level ?levelmap ?class ?filename where {?level a :Level . ?levelmap a ?class . ?level :hasLevelMap ?levelmap . ?levelmap :hasLevelMapFilename ?filename filter(!strstarts(str(?class),str(owl:)))}",
+			limit: 50,
+			offset: 0
+			},
+			function (data) {
+				expect(data).not.to.be(null);
+				expect(data.results).not.to.be(undefined);
+				expect(data.results.bindings).not.to.be(undefined);
+				console.log(data.results.bindings);
+				
+				var bindings = data.results.bindings;
+				callback(bindings);
+				
+		});
+}
+
+function getLevelMapsWithClassAndFilenameOfAllLevelsCallback(bindings)
+{
 }
 
 function getLevelNamesQuery(selectID,callback)
