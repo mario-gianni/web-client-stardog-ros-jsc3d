@@ -276,7 +276,9 @@ window.onload = function() {
 	document.getElementById('sel-levels-cv2').addEventListener('mouseover',function(e){getLevelNamesQuery(document.getElementById('sel-levels-cv2'),getLevelNamesCallback);});
 	document.getElementById('sel-levels-cv3').addEventListener('mouseover',function(e){getLevelNamesQuery(document.getElementById('sel-levels-cv3'),getLevelNamesCallback);});
 	
-	document.getElementById('level_map_list-cv2').addEventListener('click',function(e){getLevelMapsWithClassAndFilenameOfAllLevelsQuery(getLevelMapsWithClassAndFilenameOfAllLevelsCallback);});
+	document.getElementById('level_map_list-cv2').addEventListener('mouseover',function(e){
+		getLevelMapsWithClassAndFilenameOfAllLevelsQuery(document.getElementById('sel-levels-cv2'),document.getElementById('level_map_list-cv2'),getLevelMapsWithClassAndFilenameOfAllLevelsCallback);
+		});
 
 	
 	<!---->getLevelNames(document.getElementById('sel-levels-cv2'));
@@ -305,29 +307,269 @@ function previous(counter,viewer)
 	return counter;
 }
 
-function getLevelMapsWithClassAndFilenameOfAllLevelsQuery(callback)
+function getLevelMapsWithClassAndFilenameOfAllLevelsQuery(selectID,listSelID,callback)
 {
-	conn.query({
-			database: "tradr-domain",
-			query: "select distinct ?level ?levelmap ?class ?filename where {?level a :Level . ?levelmap a ?class . ?level :hasLevelMap ?levelmap . ?levelmap :hasLevelMapFilename ?filename filter(!strstarts(str(?class),str(owl:)))}",
-			limit: 50,
-			offset: 0
-			},
-			function (data) {
-				expect(data).not.to.be(null);
-				expect(data.results).not.to.be(undefined);
-				expect(data.results.bindings).not.to.be(undefined);
-				console.log(data.results.bindings);
-				
-				var bindings = data.results.bindings;
-				callback(bindings);
-				
-		});
+	/* Prendo il puntatore della select */
+	var index = selectID.selectedIndex;
+	var text = selectID.options[index].text;
+	
+	if(text != "Please select..")
+	{
+		conn.query({
+				database: "tradr-domain",
+				//query: "select distinct ?level ?levelmap ?class ?filename where {?level a :Level . ?levelmap a ?class . ?level :hasLevelMap ?levelmap . ?levelmap :hasLevelMapFilename ?filename filter(!strstarts(str(?class),str(owl:)))}",
+				//query: "select distinct ?levelname ?class ?filename where {?level :hasLevelName ?levelname . ?levelmap a ?class . ?level :hasLevelMap ?levelmap . ?levelmap :hasLevelMapFilename ?filename}",
+				query: "select distinct ?levelname ?class ?filename where {?level :hasLevelName ?levelname . ?levelmap a ?class . ?level :hasLevelMap ?levelmap . ?levelmap :hasLevelMapFilename ?filename filter strstarts(str(?levelname),'" + text + "')}",
+				limit: 50,
+				offset: 0
+				},
+				function (data) {
+					expect(data).not.to.be(null);
+					expect(data.results).not.to.be(undefined);
+					expect(data.results.bindings).not.to.be(undefined);
+					console.log(data.results.bindings);
+					
+					var bindings = data.results.bindings;
+					callback(selectID,listSelID,bindings);
+					
+			});
+	}
 }
 
-function getLevelMapsWithClassAndFilenameOfAllLevelsCallback(bindings)
+function getLevelMapsWithClassAndFilenameOfAllLevelsCallback(selectID,listSelID,bindings)
 {
+	/* Prendo il puntatore della select */
+	var index = selectID.selectedIndex;
+	var text = selectID.options[index].text;
+	
+	var k = 0;
+	var list = [];
+	for(i in bindings) {
+		var binding = bindings[i];
+		for(n in binding) {
+			list[k] = binding[n].value;
+			k++;
+			//var term = binding[n].value;
+			//var h = term.indexOf("#");
+			//if(h > 0 && term.substring(h+1) != "NamedIndividual")
+			//{
+			//	console.log(term.substring(h+1));
+			//	console.log(n.text);
+			//}
+		}
+	}
+	//console.log(list.length);
+	var list2 = [];
+	var n = 0;
+	for(i = 0; i < list.length; i++)
+	{
+		var h = list[i].indexOf("#");
+		if (h > 0 && list[i].substring(h+1) != "NamedIndividual")
+		{
+			list2[n] = list[i].substring(h+1);
+			list2[n+1] = list[i+1];
+			console.log(list2[n]);
+			console.log(list2[n+1]);
+			n = n + 2;
+		}	
+	}
+	
+	/* memorizzare l'indice della select */
+	var index = listSelID.selectedIndex;
+	var text = listSelID.options[index].text;
+	console.log(text);
+	/* Svuotare la select group */
+	removeAllOptions(listSelID,true);
+	/* Creare la select con outgroups */
+	
+
+	var Select_List_Data = {
+			'Level Metric Map': {
+                text: []
+            },
+            'Level Semantic Map': {
+                text: []
+            },
+			'Level Threedimensional Map': {
+                text: []
+            },
+			
+			//text: []
+	};
+	var k1, k2, k3, k4;
+	k1 = k2 = k3 = k4 = 0;
+	var p1 = 'Level Semantic Map';
+	var p2 = 'Level Threedimensional Map';
+	var p3 = 'Level Metric Map';
+	var maps1 = [];
+	var maps2 = [];
+	var maps3 = [];
+	var maps4 = [];
+	for(i = 0; i < list2.length; i = i + 2)
+	{
+		switch (list2[i]) {
+		// LevelSemanticMap
+ 		case "LevelPolygonalMeshMap":
+		maps1[k1] = list2[i];
+		k1++;
+		//alert("LPM");
+		break;
+ 		case "LevelSegmentedMap":
+		maps1[k1] = list2[i];
+		k1++;
+		//alert("LSM");
+		break;
+		case "LevelTraversabilityMap":
+		maps1[k1] = list2[i];
+		k1++;
+		//alert("LTrM");
+		break;
+		case "LevelTopologicalMap":
+		maps1[k1] = list2[i];
+		k1++;
+		//alert("LToM");
+		break;
+		case "LevelObjectMap":
+		maps1[k1] = list2[i];
+		k1++;
+		//alert("LOM");
+		break;
+		case "LevelWiFiMap":
+		maps4[k4] = 'Level WiFi Map';
+		k4++;
+		break;
+		// LevelThreeDimensionalMap
+		case "LevelURDFModel":
+		maps2[k2] = list2[i];
+		k2++;
+		//alert("URDF");
+		break;
+		case "LevelCADModel":
+		maps2[k2] = list2[i];
+		k2++;
+		//alert("CAD")
+		break;
+		case "LevelColladaModel":
+		maps2[k2] = list2[i];
+		k2++;
+		//alert("Collada");
+		break;
+		case "FloorPlan":
+		maps4[k4] = 'Floor-plan';
+		k4++;
+		break;
+		// LevelMetricMap
+		case "LevelOccupancyGrdMap":
+		maps3[k3] = list2[i];
+		k3++;
+		//alert("LOcGM");
+		break;
+		case "LevelPointCloudMap":
+		maps3[k3] = list2[i];
+		k3++;
+		//alert("LPCM");
+		break;
+		default:
+			console.log("Level map type undefined");
+		}
+	}
+	Select_List_Data[p1].text = maps1;
+	Select_List_Data[p2].text = maps2;
+	Select_List_Data[p3].text = maps3;
+	//Select_List_Data.text = maps4;
+	console.log(Select_List_Data);
+
+	appendDataToSelect(listSelID,Select_List_Data);
+	
+	for(i = 0; i < maps4.length; i++) {
+		var f = document.createDocumentFragment();
+		var opts = document.createElement('option');
+		opts.appendChild( document.createTextNode( maps4[i]) );
+		f.appendChild(opts);
+		listSelID.appendChild(f);
+	}
+
+	console.log(listSelID.options.length);
+	for(i = 0; i < listSelID.options.length; i++)
+	{
+		if(listSelID.options[i].text == text)
+		{
+			console.log("Matching of selection");
+			listSelID.selectedIndex = i;
+		}
+	}
 }
+
+// removeGrp (optional) boolean to remove optgroups
+function removeAllOptions(sel, removeGrp) {
+    var len, groups, par;
+    if (removeGrp) {
+        groups = sel.getElementsByTagName('optgroup');
+        len = groups.length;
+        for (var i=len; i; i--) {
+            sel.removeChild( groups[i-1] );
+        }
+    }
+    
+    len = sel.options.length;
+    for (var i=len; i; i--) {
+        par = sel.options[i-1].parentNode;
+        par.removeChild( sel.options[i-1] );
+    }
+	
+	var f = document.createDocumentFragment();
+	var o = document.createElement('option');
+    o.appendChild( document.createTextNode( "Please select.." ) );
+	f.appendChild(o);
+	sel.appendChild(f);
+}
+
+function appendDataToSelect(sel, obj) {
+    var f = document.createDocumentFragment();
+    var labels = [], group, opts;
+    
+    function addOptions(obj) {
+        var f = document.createDocumentFragment();
+        var o;
+        
+        for (var i=0, len=obj.text.length; i<len; i++) {
+            o = document.createElement('option');
+            o.appendChild( document.createTextNode( obj.text[i] ) );
+            
+            if ( obj.value ) {
+                o.value = obj.value[i];
+            }
+            
+            f.appendChild(o);
+        }
+        return f;
+    }
+    
+    if ( obj.text ) {
+		console.log(obj.text);
+        opts = addOptions(obj);
+        f.appendChild(opts);
+    } else {
+        for ( var prop in obj ) {
+            if ( obj.hasOwnProperty(prop) ) {
+                labels.push(prop);
+				console.log(prop);
+            }
+        }
+        
+        for (var i=0, len=labels.length; i<len; i++) {
+            group = document.createElement('optgroup');
+            group.label = labels[i];
+            f.appendChild(group);
+            opts = addOptions(obj[ labels[i] ] );
+			console.log(obj[ labels[i] ]);
+            group.appendChild(opts);
+        }
+    }
+    sel.appendChild(f);
+}
+
+
 
 function getLevelNamesQuery(selectID,callback)
 {
